@@ -1,7 +1,14 @@
 import React, { Component } from "react";
 import { Grid, Cell } from "react-mdl";
+import ReactGA from "react-ga";
+
 
 class Education extends Component {
+
+  componentDidMount() {
+    ReactGA.initialize("UA-166670153-1");
+    ReactGA.pageview(window.location.pathname);
+  }
   render() {
     return (
       <Grid>

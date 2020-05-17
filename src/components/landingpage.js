@@ -1,13 +1,21 @@
 import React, { Component } from "react";
 import { Grid, Tooltip } from "react-mdl";
+import ReactGA from "react-ga";
+import "./index.css";
 
 class Landing extends Component {
+  async componentDidMount() {
+    ReactGA.initialize("UA-166670153-1");
+    ReactGA.pageview(window.location.pathname);
+  }
+
   render() {
     return (
       <div style={{ width: "100%", margin: "auto" }}>
         <Grid
           className="landing-grid"
           style={{
+            overflow: "auto",
             background:
               "url(https://c4.wallpaperflare.com/wallpaper/22/240/855/texture-gradient-simple-background-blue-wallpaper-preview.jpg) center / cover",
           }}
@@ -29,11 +37,11 @@ class Landing extends Component {
               /> */}
 
             {/* <div className="banner-text" style={{backgroundColor: "transparent"}}> */}
-            <h1>Front End Developer</h1>
+            <h1 style={{ paddingTop: 5 }}>Front End Developer</h1>
 
             <hr style={{ borderTop: "2px solid white" }} />
 
-            <p> HTML/CSS | Bootstrap | JavaScript | ReactJS | Git </p>
+            <p> HTML/CSS | Bootstrap | JavaScript | ReactJS | React Native | Git</p>
 
             <div className="social-links">
               {/* LinkedIn */}
@@ -58,7 +66,7 @@ class Landing extends Component {
                 </a>
               </Tooltip>
 
-              {/* Freecodecamp */}
+              {/* Skype */}
               <Tooltip label="Skype" large>
                 <a
                   href="skype:live:.cid.25afb8fa3ad25f06?userinfo"
@@ -69,19 +77,18 @@ class Landing extends Component {
                 </a>
               </Tooltip>
 
-              {/* Youtube */}
-              <Tooltip label="Angelist Account" large>
+              {/* Twitter */}
+              <Tooltip label="Twitter" large>
                 <a
-                  href="https://angel.co/u/amritajaiswal"
+                  href="https://twitter.com/Amritajaiswall"
                   rel="noopener noreferrer"
                   target="_blank"
                 >
-                  <i className="fa fa-angellist" aria-hidden="true" />
+                  <i className="fa fa-twitter" aria-hidden="true" />
                 </a>
               </Tooltip>
             </div>
           </div>
-          {/* </Cell> */}
         </Grid>
       </div>
     );

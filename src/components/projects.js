@@ -12,11 +12,17 @@ import {
   CardMenu,
   IconButton,
 } from "react-mdl";
+import ReactGA from "react-ga";
+import "./index.css";
 
 class Projects extends Component {
   constructor(props) {
     super(props);
-    this.state = { activeTab: 0 };
+    this.state = {
+      activeTab: 0,
+    };
+    ReactGA.initialize("UA-166670153-1");
+    ReactGA.pageview(window.location.pathname);
   }
 
   toggleCategories() {
@@ -24,7 +30,11 @@ class Projects extends Component {
       return (
         <div className="projects-grid">
           {/* Project 1 */}
-          <Card shadow={5} style={{ minWidth: "450", margin: "auto" }}>
+          <Card
+            id="cards"
+            shadow={5}
+            // style={{ minWidth: "450", margin: "auto" }}
+          >
             <CardTitle
               style={{
                 color: "#fff",
@@ -79,7 +89,11 @@ class Projects extends Component {
     } else if (this.state.activeTab === 1) {
       return (
         <div className="projects-grid">
-          <Card shadow={5} style={{ minWidth: "450", margin: "auto" }}>
+          <Card
+            id="cards"
+            shadow={5}
+            // style={{ minWidth: "450", margin: "auto" }}
+          >
             <CardTitle
               style={{
                 color: "#fff",
@@ -163,18 +177,47 @@ class Projects extends Component {
           </Card>
         </div>
       );
+    } else if (this.state.activeTab === 3) {
+      return (
+        <div>
+          <Card shadow={5} style={{ minWidth: "450", margin: "auto" }}>
+            <CardTitle
+              style={{
+                color: "#fff",
+                height: "176px",
+                background:
+                  "url(https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg) center / cover",
+                // marginTop:'6%',
+                backgroundColor: "black",
+              }}
+            >
+              Shopping List Items
+            </CardTitle>
+            <CardText>
+              This is a List Item in React Native. This is the mini project i
+              had made. You can Add, Edit , Delete the list items
+            </CardText>
+            <CardActions border>
+              <Button colored>
+                <a href="https://github.com/amrita-jaiswal/React-Native-list-item">
+                  Github
+                </a>
+              </Button>
+            </CardActions>
+            <CardMenu style={{ color: "#fff" }}>
+              <IconButton name="share" />
+            </CardMenu>
+          </Card>
+        </div>
+      );
     }
-    // else if(this.state.activeTab === 3) {
-    //   return (
-    //     <div><h1>This is MongoDB</h1></div>
-    //   )
-    // }
   }
 
   render() {
     return (
       <div>
         <Tabs
+          id="tab1"
           activeTab={this.state.activeTab}
           onChange={(tabId) => this.setState({ activeTab: tabId })}
           ripple
@@ -182,6 +225,7 @@ class Projects extends Component {
           <Tab>HTML/CSS</Tab>
           <Tab>JavaScript</Tab>
           <Tab>React</Tab>
+          <Tab>React Native</Tab>
         </Tabs>
 
         <Grid>

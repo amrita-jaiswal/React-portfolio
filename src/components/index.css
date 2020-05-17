@@ -1,0 +1,40 @@
+#cards {
+  min-width: 450;
+  margin: auto;
+}
+
+@media (max-width: 650px) {
+  .social-links {
+    display: flex;
+    flex-direction: column;
+  }
+  .background {
+    height: 0px;
+  }
+}
+
+@media (max-width: 1024px) {
+  #about1 {
+    margin: 15px 0 0 80px;
+  }
+}
+
+@media (max-width: 800px) {
+  .projects-grid {
+    flex-direction: column;
+    margin-top: 60px;
+  }
+  #tab1 {
+    margin: 5px 0 0 15px
+  }
+}
+
+@media (max-width: 800px) {
+  #cards {
+    margin: auto;
+    margin-bottom: 70px;
+  }
+  .contact-body {
+    overflow: auto;
+  }
+}

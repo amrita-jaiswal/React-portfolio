@@ -1,33 +1,50 @@
 import React, { Component } from "react";
 import { Grid, Cell, List, ListItem, ListItemContent } from "react-mdl";
-// import img1 from "../assets/img1.jpg";
+import ReactGA from "react-ga";
+import "./index.css";
 
 class Contact extends Component {
+  componentDidMount() {
+    ReactGA.initialize("UA-166670153-1");
+    ReactGA.pageview(window.location.pathname);
+  }
   render() {
     return (
       <div className="contact-body">
         <Grid className="contact-grid">
           <Cell col={6}>
-            <h2>Amrita</h2>
             <img
               src={require("../assets/img1.jpg")}
               alt="avatar"
-              style={{ height: "250px", borderRadius: "6%" }}
+              style={{
+                height: "250px",
+                borderRadius: "6%",
+                maxWidth: "100%",
+                marginTop: "9vh",
+              }}
             />
-            <p style={{ width: "75%", margin: "auto", paddingTop: "3em" }}>
-              If you have any vacancy that suits my technical skill set,
-              you can contact me by using any of the links.
-              
+            <h2 style={{ paddingTop: 15 }}>Amrita</h2>
+            <p style={{ width: "75%", margin: "auto", 
+                        // paddingTop: "2em" 
+                        }}>
+              If you have any vacancy that suits my technical skill set, you can
+              contact me by using any of the links.
             </p>
           </Cell>
           <Cell col={6}>
             <h2>Contact Me</h2>
-            <hr style={{ borderTop: "2px solid black" }} />
+            <hr
+              style={{
+                borderTop: "2px solid black",
+                //  marginRight: '46%'
+              }}
+            />
 
             <div className="contact-list">
-              <List>
+              <List style={{ display: "table" }}>
                 <ListItem>
                   <ListItemContent
+                    id="span"
                     style={{
                       fontSize: "30px",
                       fontFamily: "Anton",
@@ -39,7 +56,7 @@ class Contact extends Component {
                       aria-hidden="true"
                       style={{ color: "#124566" }}
                     />
-                    +91 987654321
+                    +91 9608307717
                   </ListItemContent>
                 </ListItem>
 

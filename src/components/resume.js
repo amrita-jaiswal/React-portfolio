@@ -1,10 +1,18 @@
 import React, { Component } from "react";
 import { Grid, Cell } from "react-mdl";
+// import { Link } from "react-router-dom";
 import Education from "./education";
 import Experience from "./experience";
 import Skills from "./skills";
+import ReactGA from "react-ga";
+// import amrita from "../assets/amrita.jpg";
 
 class Resume extends Component {
+  
+  componentDidMount() {
+    ReactGA.initialize("UA-166670153-1");
+    ReactGA.pageview(window.location.pathname);
+  }
   render() {
     return (
       <div>
@@ -41,12 +49,20 @@ class Resume extends Component {
             <hr style={{ borderTop: "3px solid #103e66", width: "50%" }} />
             <h5>Address</h5>
             <p>Old Airport Road, Bengaluru</p>
+            <hr style={{ borderTop: "3px solid #103e66", width: "50%" }} />
             <h5>Phone</h5>
-            <p> +91 987654321 </p>
+            <p> +91 9608307717 </p>
+            <hr style={{ borderTop: "3px solid #103e66", width: "50%" }} />
             <h5>Email</h5>
             <p>amritajais10@gmail.com</p>
+            <hr style={{ borderTop: "3px solid #103e66", width: "50%" }} />
             <h5>Web Site</h5>
-            <p>amritajaiswal.me</p>
+            <a
+              href="https://amritajaiswal.herokuapp.com"
+              style={{ color: "blue" }}
+            >
+              <em> https://amritajaiswal.herokuapp.com </em>
+            </a>
             <hr style={{ borderTop: "3px solid #103e66", width: "50%" }} />
           </Cell>
           <Cell
@@ -88,19 +104,22 @@ class Resume extends Component {
               endYear={2020}
               jobProfile="Front End Developer"
               jobName="Internship"
-              companyName="Comapny Name - Airprobe (14Weeks Technology)"
+              companyName="Company Name - Airprobe (14Weeks Technology)"
               jobDescription="Currently I am pursuing my Internship as a Front End Developer in their Web Development Team.
-                              I am working on these technologies in the company i.e - ReactJS, JavaScipt and HTML/CSS.
-                               I have also worked on making the WebApp Responsive for Mobile, Tablet as well as Web"
+                              I am working on these technologies in the company i.e- ReactJS, JavaScipt and HTML/CSS, REST API's.
+                               I have also worked on making the WebApp Responsive for Mobile, Tablet as well as Web
+                               I had worked on Google Analytics."
             />
 
             <hr style={{ borderTop: "3px solid #7a1515" }} />
             <h2>Skills</h2>
-            <Skills skill="javascript" progress={80} />
+            <Skills skill="Javascript&nbsp;&nbsp;" progress={80} />
             <Skills skill="HTML/CSS" progress={95} />
             <Skills skill="ReactJS&nbsp;&nbsp;&nbsp;" progress={75} />
-            <Skills skill="Bootstrap" progress={90} />
+            <Skills skill="Bootstrap&nbsp;" progress={90} />
+            <Skills skill="React Native" progress={50} />
             <Skills skill="Git Version" progress={90} />
+
           </Cell>
         </Grid>
       </div>
