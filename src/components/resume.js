@@ -6,9 +6,10 @@ import Experience from "./experience";
 import Skills from "./skills";
 import ReactGA from "react-ga";
 // import amrita from "../assets/amrita.jpg";
+import Pdf from '../assets/Resume.pdf';
 
 class Resume extends Component {
-  
+
   componentDidMount() {
     ReactGA.initialize("UA-166670153-1");
     ReactGA.pageview(window.location.pathname);
@@ -29,13 +30,14 @@ class Resume extends Component {
             <h2>Amrita</h2>
             <h4 style={{ color: "grey" }}>Front End Developer</h4>
             <p>
-              <a
+              <a href={Pdf} target='_blank' className='nav-link' style={{ color: "blue" }}>
+                {/* <a
                 className="btn btn-primary btn-learn"
                 href="https://docs.google.com/document/d/1NvswUdSTEgdvKDIFshPNJS0MxSTddGrX7H8Vyy3VZHQ/edit?usp=sharing/edit?usp=sharing"
                 target="_blank"
                 rel="noopener noreferrer"
                 style={{ color: "blue" }}
-              >
+              > */}
                 View Resume
                 <i className="icon-download4" />
               </a>
@@ -86,14 +88,14 @@ class Resume extends Component {
               startYear={2010}
               endYear={2013}
               schoolName="Diploma in Engineering"
-              schoolDescription="I completed my Diploma in Computer Science and Engineering branch with 82%."
+              schoolDescription="I had completed my Diploma in Computer Science and Engineering branch with 82%."
             />
 
             <Education
               startYear={2009}
               endYear={2010}
               schoolName="10th"
-              schoolDescription="I completed my Schooling with 8.0 CGPA from my hometown in Jharkhand "
+              schoolDescription="I had completed my Schooling with 8.0 CGPA from my hometown in Jharkhand "
             />
             <hr style={{ borderTop: "3px solid #7a1515" }} />
 
@@ -102,13 +104,12 @@ class Resume extends Component {
             <Experience
               startYear={2020}
               endYear={2020}
-              jobProfile="Front End Developer"
+              jobProfile="Front End Developer Intern"
               jobName="Internship"
               companyName="Company Name - Airprobe (14Weeks Technology)"
-              jobDescription="Currently I am pursuing my Internship as a Front End Developer in their Web Development Team.
-                              I am working on these technologies in the company i.e- ReactJS, JavaScipt and HTML/CSS, REST API's.
-                               I have also worked on making the WebApp Responsive for Mobile, Tablet as well as Web
-                               I had worked on Google Analytics."
+              jobDescription="I have completed my 4.5 months Internship as a Front End Developer Intern in their Web Development Team.
+                              I had worked on these technologies in the company i.e- ReactJS, JavaScipt and HTML/CSS, REST API's.
+                              I have also worked on making Responsive Webapp for Mobile, Tablet."
             />
 
             <hr style={{ borderTop: "3px solid #7a1515" }} />
@@ -119,6 +120,7 @@ class Resume extends Component {
             <Skills skill="Bootstrap&nbsp;" progress={90} />
             <Skills skill="React Native" progress={50} />
             <Skills skill="Git Version" progress={90} />
+
 
           </Cell>
         </Grid>
